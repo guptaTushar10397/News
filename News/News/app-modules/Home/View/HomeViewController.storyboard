@@ -21,17 +21,28 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="4W7-Hq-0na">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="bAf-oi-Olz"/>
+                                    <constraint firstAttribute="height" constant="20" id="rpk-2t-gEH"/>
+                                </constraints>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6Jc-aN-H65" secondAttribute="trailing" id="9ZW-8z-BqL"/>
                             <constraint firstItem="6Jc-aN-H65" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="KID-9B-alx"/>
+                            <constraint firstItem="4W7-Hq-0na" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="gos-fE-oRC"/>
+                            <constraint firstItem="4W7-Hq-0na" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="o6A-N9-lsj"/>
                             <constraint firstItem="6Jc-aN-H65" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pY8-QB-X1S"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="6Jc-aN-H65" secondAttribute="bottom" id="v9y-YA-WmE"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="4W7-Hq-0na" id="tHP-5h-cFN"/>
                         <outlet property="mainTableView" destination="6Jc-aN-H65" id="BuI-jh-bsT"/>
                     </connections>
                 </viewController>

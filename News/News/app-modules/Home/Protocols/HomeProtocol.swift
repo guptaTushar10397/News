@@ -14,6 +14,7 @@ protocol ViewToPresenterProtocol: AnyObject {
 }
 
 protocol PresenterToViewProtocol: AnyObject {
+    func showLoadingIndicatorView(_ show: Bool)
     func reloadTabelView()
 }
 

@@ -22,6 +22,7 @@ extension HomePresenter: ViewToPresenterProtocol {
     }
     
     func viewDidLoad() {
+        view?.showLoadingIndicatorView(true)
         fetchHomeData()
     }
     
@@ -43,11 +44,13 @@ extension HomePresenter: InteractorToPresenterProtocol {
             }
             return date1 > date2
         }
-
+        
+        view?.showLoadingIndicatorView(false)
         view?.reloadTabelView()
     }
     
     func didFailToReceiveHomeModelData(_ error: any Error) {
+        view?.showLoadingIndicatorView(false)
         fatalError("Failed to fetch data, Error: \(error.localizedDescription)")
     }
 }
