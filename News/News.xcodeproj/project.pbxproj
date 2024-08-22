@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		283E1C482C7749AA007356EB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283E1C472C7749AA007356EB /* CoreDataManager.swift */; };
 		288DF2152C770F4B000EC0E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2142C770F4B000EC0E3 /* AppDelegate.swift */; };
 		288DF2172C770F4B000EC0E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2162C770F4B000EC0E3 /* SceneDelegate.swift */; };
 		288DF21F2C770F4B000EC0E3 /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 288DF21D2C770F4B000EC0E3 /* News.xcdatamodeld */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		283E1C472C7749AA007356EB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		288DF2112C770F4B000EC0E3 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		288DF2142C770F4B000EC0E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		288DF2162C770F4B000EC0E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				288DF24F2C77254B000EC0E3 /* APIManager.swift */,
+				283E1C472C7749AA007356EB /* CoreDataManager.swift */,
 			);
 			path = managers;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				288DF21F2C770F4B000EC0E3 /* News.xcdatamodeld in Sources */,
 				28BD4ED12C77373500A4DF20 /* UIImageView+Extension.swift in Sources */,
 				288DF2172C770F4B000EC0E3 /* SceneDelegate.swift in Sources */,
+				283E1C482C7749AA007356EB /* CoreDataManager.swift in Sources */,
 				288DF2502C77254B000EC0E3 /* APIManager.swift in Sources */,
 				28BD4EDB2C773D2A00A4DF20 /* Date+Extension.swift in Sources */,
 				288DF2402C7715B8000EC0E3 /* HomePresenter.swift in Sources */,

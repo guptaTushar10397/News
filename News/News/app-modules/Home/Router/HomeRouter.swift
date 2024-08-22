@@ -14,12 +14,16 @@ class HomeRouter {
         let presenter = HomePresenter()
         let interactor = HomeInteractor()
         let router = HomeRouter()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let persistentContainer = appDelegate.persistentContainer
+        let coreDataService = CoreDataManager(container: persistentContainer)
         
         view.presentor = presenter
         presenter.view = view
         presenter.router = router
         presenter.interactor = interactor
         interactor.presenter = presenter
+        interactor.coreDataService = coreDataService
         
         return view
     }
