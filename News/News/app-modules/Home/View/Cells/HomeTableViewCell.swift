@@ -13,6 +13,12 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     
+    static let apiDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ" // API date format
+        return formatter
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -38,10 +44,20 @@ private extension HomeTableViewCell {
 extension HomeTableViewCell {
     
     func configureDataWithModel(_ modelData: Docs) {
+        // Description
         descriptionLabel.text = modelData.abstract
-        guard let urlString = modelData.multimedia?.first?.url,
-        let url = URL(string: baseURL + "/\(urlString)") else { return }
+    
+        // Date
+        if let pubDate = modelData.pubDate, 
+            !pubDate.isEmpty,
+           let date = DateFormatterProvider.pubDateFormatter.date(from: pubDate) {
+            dateLabel.text = date.monthYearFormatted
+        }
         
-        iconImageView.setImage(withURL: url)
+        // Image
+        if let urlString = modelData.multimedia?.first?.url,
+           let url = URL(string: baseURL + "/\(urlString)") {
+            iconImageView.setImage(withURL: url)
+        }
     }
 }

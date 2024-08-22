@@ -25,6 +25,8 @@
 		28BD4ECE2C77370100A4DF20 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD4ECD2C77370100A4DF20 /* ImageCache.swift */; };
 		28BD4ED12C77373500A4DF20 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD4ED02C77373500A4DF20 /* UIImageView+Extension.swift */; };
 		28BD4ED72C7739FB00A4DF20 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD4ED62C7739FB00A4DF20 /* Constant.swift */; };
+		28BD4ED92C773CCA00A4DF20 /* DateFormatterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD4ED82C773CCA00A4DF20 /* DateFormatterProvider.swift */; };
+		28BD4EDB2C773D2A00A4DF20 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD4EDA2C773D2A00A4DF20 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		28BD4ECD2C77370100A4DF20 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		28BD4ED02C77373500A4DF20 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		28BD4ED62C7739FB00A4DF20 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		28BD4ED82C773CCA00A4DF20 /* DateFormatterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterProvider.swift; sourceTree = "<group>"; };
+		28BD4EDA2C773D2A00A4DF20 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				28BD4ECD2C77370100A4DF20 /* ImageCache.swift */,
+				28BD4ED82C773CCA00A4DF20 /* DateFormatterProvider.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				28BD4ED02C77373500A4DF20 /* UIImageView+Extension.swift */,
+				28BD4EDA2C773D2A00A4DF20 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,7 +314,9 @@
 				28BD4ED12C77373500A4DF20 /* UIImageView+Extension.swift in Sources */,
 				288DF2172C770F4B000EC0E3 /* SceneDelegate.swift in Sources */,
 				288DF2502C77254B000EC0E3 /* APIManager.swift in Sources */,
+				28BD4EDB2C773D2A00A4DF20 /* Date+Extension.swift in Sources */,
 				288DF2402C7715B8000EC0E3 /* HomePresenter.swift in Sources */,
+				28BD4ED92C773CCA00A4DF20 /* DateFormatterProvider.swift in Sources */,
 				288DF2582C772EB8000EC0E3 /* HomeTableViewCell.swift in Sources */,
 				28BD4ED72C7739FB00A4DF20 /* Constant.swift in Sources */,
 				28BD4ECE2C77370100A4DF20 /* ImageCache.swift in Sources */,
