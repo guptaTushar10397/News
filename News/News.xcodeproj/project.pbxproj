@@ -76,7 +76,7 @@
 			children = (
 				288DF22C2C7710DC000EC0E3 /* application */,
 				288DF22F2C77118C000EC0E3 /* app-modules */,
-				288DF24E2C7724CD000EC0E3 /* manager */,
+				288DF24E2C7724CD000EC0E3 /* managers */,
 				288DF22D2C77114E000EC0E3 /* resources */,
 				288DF2252C770F4C000EC0E3 /* Info.plist */,
 			);
@@ -181,12 +181,12 @@
 			path = CoreDataModels;
 			sourceTree = "<group>";
 		};
-		288DF24E2C7724CD000EC0E3 /* manager */ = {
+		288DF24E2C7724CD000EC0E3 /* managers */ = {
 			isa = PBXGroup;
 			children = (
 				288DF24F2C77254B000EC0E3 /* APIManager.swift */,
 			);
-			path = manager;
+			path = managers;
 			sourceTree = "<group>";
 		};
 		288DF2542C772EA6000EC0E3 /* Cells */ = {
