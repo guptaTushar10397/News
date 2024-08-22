@@ -22,6 +22,9 @@
 		288DF2522C7726B6000EC0E3 /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2512C7726B6000EC0E3 /* HomeDataModel.swift */; };
 		288DF2572C772EB8000EC0E3 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288DF2562C772EB8000EC0E3 /* HomeTableViewCell.xib */; };
 		288DF2582C772EB8000EC0E3 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2552C772EB8000EC0E3 /* HomeTableViewCell.swift */; };
+		28BD4ECE2C77370100A4DF20 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD4ECD2C77370100A4DF20 /* ImageCache.swift */; };
+		28BD4ED12C77373500A4DF20 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD4ED02C77373500A4DF20 /* UIImageView+Extension.swift */; };
+		28BD4ED72C7739FB00A4DF20 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BD4ED62C7739FB00A4DF20 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		288DF2512C7726B6000EC0E3 /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
 		288DF2552C772EB8000EC0E3 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		288DF2562C772EB8000EC0E3 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		28BD4ECD2C77370100A4DF20 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		28BD4ED02C77373500A4DF20 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		28BD4ED62C7739FB00A4DF20 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +82,11 @@
 			children = (
 				288DF22C2C7710DC000EC0E3 /* application */,
 				288DF22F2C77118C000EC0E3 /* app-modules */,
+				28BD4ED52C7739E500A4DF20 /* Constants */,
+				28BD4ECF2C77371E00A4DF20 /* Extensions */,
 				288DF24E2C7724CD000EC0E3 /* managers */,
 				288DF22D2C77114E000EC0E3 /* resources */,
+				28BD4ECC2C7736E000A4DF20 /* Utility */,
 				288DF2252C770F4C000EC0E3 /* Info.plist */,
 			);
 			path = News;
@@ -198,6 +207,30 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		28BD4ECC2C7736E000A4DF20 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				28BD4ECD2C77370100A4DF20 /* ImageCache.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		28BD4ECF2C77371E00A4DF20 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				28BD4ED02C77373500A4DF20 /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		28BD4ED52C7739E500A4DF20 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				28BD4ED62C7739FB00A4DF20 /* Constant.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,10 +305,13 @@
 			files = (
 				288DF2152C770F4B000EC0E3 /* AppDelegate.swift in Sources */,
 				288DF21F2C770F4B000EC0E3 /* News.xcdatamodeld in Sources */,
+				28BD4ED12C77373500A4DF20 /* UIImageView+Extension.swift in Sources */,
 				288DF2172C770F4B000EC0E3 /* SceneDelegate.swift in Sources */,
 				288DF2502C77254B000EC0E3 /* APIManager.swift in Sources */,
 				288DF2402C7715B8000EC0E3 /* HomePresenter.swift in Sources */,
 				288DF2582C772EB8000EC0E3 /* HomeTableViewCell.swift in Sources */,
+				28BD4ED72C7739FB00A4DF20 /* Constant.swift in Sources */,
+				28BD4ECE2C77370100A4DF20 /* ImageCache.swift in Sources */,
 				288DF23C2C7714CB000EC0E3 /* HomeViewController.swift in Sources */,
 				288DF2522C7726B6000EC0E3 /* HomeDataModel.swift in Sources */,
 				288DF2442C771670000EC0E3 /* HomeRouter.swift in Sources */,

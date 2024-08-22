@@ -39,5 +39,9 @@ extension HomeTableViewCell {
     
     func configureDataWithModel(_ modelData: Docs) {
         descriptionLabel.text = modelData.abstract
+        guard let urlString = modelData.multimedia?.first?.url,
+        let url = URL(string: baseURL + "/\(urlString)") else { return }
+        
+        iconImageView.setImage(withURL: url)
     }
 }
