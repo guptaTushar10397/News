@@ -20,7 +20,7 @@ protocol PresenterToRouterProtocol: AnyObject {
 }
 
 protocol PresenterToInteractorProtocol: AnyObject {
-    func fetchData(fromURL url: URL)
+    func fetchHomeData(fromURL url: URL)
 }
 
 protocol InteractorToPresenterProtocol: AnyObject {

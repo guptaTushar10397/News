@@ -18,7 +18,7 @@ class HomePresenter {
 extension HomePresenter: ViewToPresenterProtocol {
     
     func viewDidLoad() {
-        fetchData()
+        fetchHomeData()
     }
 }
 
@@ -36,8 +36,8 @@ extension HomePresenter: InteractorToPresenterProtocol {
 
 private extension HomePresenter {
     
-    func fetchData() {
+    func fetchHomeData() {
         guard let url = URL(string: "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=j5GCulxBywG3lX211ZAPkAB8O381S5SM") else { return }
-        interactor?.fetchData(fromURL: url)
+        interactor?.fetchHomeData(fromURL: url)
     }
 }
