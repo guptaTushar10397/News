@@ -17,7 +17,11 @@ extension HomeInteractor: PresenterToInteractorProtocol {
         Task {
             do {
                 let homeDataModel: HomeDataModel = try await APIManager.shared.getData(fromUrl: url)
-                presenter?.didSuccessfullyReceiveHomeModelData(homeDataModel)
+                
+                guard let docs = homeDataModel.response?.docs,
+                      !docs.isEmpty else { return }
+                
+                presenter?.didSuccessfullyReceiveHomeModelData(docs)
             } catch {
                 presenter?.didFailToReceiveHomeModelData(error)
             }

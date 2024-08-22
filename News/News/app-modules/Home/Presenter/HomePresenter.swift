@@ -12,13 +12,13 @@ class HomePresenter {
     var interactor: PresenterToInteractorProtocol?
     var router: PresenterToRouterProtocol?
     
-    private var homeDataModel: HomeDataModel = HomeDataModel()
+    private var docs: [Docs] = []
 }
 
 extension HomePresenter: ViewToPresenterProtocol {
     
     var numberOfRows: Int {
-        homeDataModel.response?.docs?.count ?? 0
+        docs.count
     }
     
     func viewDidLoad() {
@@ -26,15 +26,24 @@ extension HomePresenter: ViewToPresenterProtocol {
     }
     
     func dataForRowAt(_ indexPath: IndexPath) -> Docs? {
-        guard let docs = self.homeDataModel.response?.docs else { return nil }
-        return docs[indexPath.row]
+        docs[indexPath.row]
     }
 }
 
 extension HomePresenter: InteractorToPresenterProtocol {
     
-    func didSuccessfullyReceiveHomeModelData(_ homeModel: HomeDataModel) {
-        self.homeDataModel = homeModel
+    func didSuccessfullyReceiveHomeModelData(_ docs: [Docs]) {
+        
+        self.docs = docs.sorted { doc1, doc2 in
+            guard let pubDateString1 = doc1.pubDate,
+                  let pubDateString2 = doc2.pubDate,
+                  let date1 = DateFormatterProvider.pubDateFormatter.date(from: pubDateString1),
+                  let date2 = DateFormatterProvider.pubDateFormatter.date(from: pubDateString2) else {
+                return false
+            }
+            return date1 > date2
+        }
+
         view?.reloadTabelView()
     }
     

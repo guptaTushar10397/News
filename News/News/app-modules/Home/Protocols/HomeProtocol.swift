@@ -26,7 +26,7 @@ protocol PresenterToInteractorProtocol: AnyObject {
 }
 
 protocol InteractorToPresenterProtocol: AnyObject {
-    func didSuccessfullyReceiveHomeModelData(_ homeModel: HomeDataModel)
+    func didSuccessfullyReceiveHomeModelData(_ docs: [Docs])
     func didFailToReceiveHomeModelData(_ error: Error)
 }
 
