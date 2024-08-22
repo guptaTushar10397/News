@@ -58,40 +58,104 @@
 		288DF2132C770F4B000EC0E3 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				288DF22F2C77118C000EC0E3 /* Modules */,
-				288DF22D2C77114E000EC0E3 /* Resources */,
-				288DF22C2C7710DC000EC0E3 /* Core */,
+				288DF22C2C7710DC000EC0E3 /* application */,
+				288DF22F2C77118C000EC0E3 /* app-modules */,
+				288DF22D2C77114E000EC0E3 /* resources */,
+				288DF2252C770F4C000EC0E3 /* Info.plist */,
 			);
 			path = News;
 			sourceTree = "<group>";
 		};
-		288DF22C2C7710DC000EC0E3 /* Core */ = {
+		288DF22C2C7710DC000EC0E3 /* application */ = {
 			isa = PBXGroup;
 			children = (
 				288DF2142C770F4B000EC0E3 /* AppDelegate.swift */,
 				288DF2162C770F4B000EC0E3 /* SceneDelegate.swift */,
-				288DF21D2C770F4B000EC0E3 /* News.xcdatamodeld */,
 			);
-			path = Core;
+			path = application;
 			sourceTree = "<group>";
 		};
-		288DF22D2C77114E000EC0E3 /* Resources */ = {
+		288DF22D2C77114E000EC0E3 /* resources */ = {
 			isa = PBXGroup;
 			children = (
 				288DF2222C770F4C000EC0E3 /* LaunchScreen.storyboard */,
 				288DF21A2C770F4B000EC0E3 /* Main.storyboard */,
-				288DF2252C770F4C000EC0E3 /* Info.plist */,
 				288DF2202C770F4C000EC0E3 /* Assets.xcassets */,
+				288DF2382C7713E6000EC0E3 /* CoreDataModels */,
 			);
-			path = Resources;
+			path = resources;
 			sourceTree = "<group>";
 		};
-		288DF22F2C77118C000EC0E3 /* Modules */ = {
+		288DF22F2C77118C000EC0E3 /* app-modules */ = {
 			isa = PBXGroup;
 			children = (
+				288DF2302C771209000EC0E3 /* Home */,
 				288DF2182C770F4B000EC0E3 /* ViewController.swift */,
 			);
-			path = Modules;
+			path = "app-modules";
+			sourceTree = "<group>";
+		};
+		288DF2302C771209000EC0E3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				288DF2312C771240000EC0E3 /* Protocols */,
+				288DF2322C771257000EC0E3 /* Entity */,
+				288DF2332C771262000EC0E3 /* Interactor */,
+				288DF2342C77126C000EC0E3 /* Router */,
+				288DF2352C771273000EC0E3 /* Presenter */,
+				288DF2362C771279000EC0E3 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		288DF2312C771240000EC0E3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		288DF2322C771257000EC0E3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		288DF2332C771262000EC0E3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		288DF2342C77126C000EC0E3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		288DF2352C771273000EC0E3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		288DF2362C771279000EC0E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		288DF2382C7713E6000EC0E3 /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				288DF21D2C770F4B000EC0E3 /* News.xcdatamodeld */,
+			);
+			path = CoreDataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +384,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4RM245ZBG3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = News/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -348,6 +413,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4RM245ZBG3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = News/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
