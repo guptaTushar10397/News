@@ -17,8 +17,17 @@ class HomePresenter {
 
 extension HomePresenter: ViewToPresenterProtocol {
     
+    var numberOfRows: Int {
+        homeDataModel.response?.docs?.count ?? 0
+    }
+    
     func viewDidLoad() {
         fetchHomeData()
+    }
+    
+    func dataForRowAt(_ indexPath: IndexPath) -> Docs? {
+        guard let docs = self.homeDataModel.response?.docs else { return nil }
+        return docs[indexPath.row]
     }
 }
 
@@ -26,7 +35,7 @@ extension HomePresenter: InteractorToPresenterProtocol {
     
     func didSuccessfullyReceiveHomeModelData(_ homeModel: HomeDataModel) {
         self.homeDataModel = homeModel
-        print("")
+        view?.reloadTabelView()
     }
     
     func didFailToReceiveHomeModelData(_ error: any Error) {

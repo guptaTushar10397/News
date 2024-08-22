@@ -20,6 +20,8 @@
 		288DF2462C771A01000EC0E3 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288DF2452C771A01000EC0E3 /* HomeViewController.storyboard */; };
 		288DF2502C77254B000EC0E3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF24F2C77254B000EC0E3 /* APIManager.swift */; };
 		288DF2522C7726B6000EC0E3 /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2512C7726B6000EC0E3 /* HomeDataModel.swift */; };
+		288DF2572C772EB8000EC0E3 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288DF2562C772EB8000EC0E3 /* HomeTableViewCell.xib */; };
+		288DF2582C772EB8000EC0E3 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2552C772EB8000EC0E3 /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		288DF2452C771A01000EC0E3 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		288DF24F2C77254B000EC0E3 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		288DF2512C7726B6000EC0E3 /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
+		288DF2552C772EB8000EC0E3 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		288DF2562C772EB8000EC0E3 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 		288DF2362C771279000EC0E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				288DF2542C772EA6000EC0E3 /* Cells */,
 				288DF2392C7714CB000EC0E3 /* HomeViewController.swift */,
 				288DF2452C771A01000EC0E3 /* HomeViewController.storyboard */,
 			);
@@ -182,6 +187,15 @@
 				288DF24F2C77254B000EC0E3 /* APIManager.swift */,
 			);
 			path = manager;
+			sourceTree = "<group>";
+		};
+		288DF2542C772EA6000EC0E3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				288DF2552C772EB8000EC0E3 /* HomeTableViewCell.swift */,
+				288DF2562C772EB8000EC0E3 /* HomeTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +258,7 @@
 			files = (
 				288DF2462C771A01000EC0E3 /* HomeViewController.storyboard in Resources */,
 				288DF2212C770F4C000EC0E3 /* Assets.xcassets in Resources */,
+				288DF2572C772EB8000EC0E3 /* HomeTableViewCell.xib in Resources */,
 				288DF2242C770F4C000EC0E3 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +275,7 @@
 				288DF2172C770F4B000EC0E3 /* SceneDelegate.swift in Sources */,
 				288DF2502C77254B000EC0E3 /* APIManager.swift in Sources */,
 				288DF2402C7715B8000EC0E3 /* HomePresenter.swift in Sources */,
+				288DF2582C772EB8000EC0E3 /* HomeTableViewCell.swift in Sources */,
 				288DF23C2C7714CB000EC0E3 /* HomeViewController.swift in Sources */,
 				288DF2522C7726B6000EC0E3 /* HomeDataModel.swift in Sources */,
 				288DF2442C771670000EC0E3 /* HomeRouter.swift in Sources */,

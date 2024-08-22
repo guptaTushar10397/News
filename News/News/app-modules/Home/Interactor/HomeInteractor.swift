@@ -13,7 +13,7 @@ class HomeInteractor {
 
 extension HomeInteractor: PresenterToInteractorProtocol {
     
-    @MainActor func fetchHomeData(fromURL url: URL) {
+    func fetchHomeData(fromURL url: URL) {
         Task {
             do {
                 let homeDataModel: HomeDataModel = try await APIManager.shared.getData(fromUrl: url)
