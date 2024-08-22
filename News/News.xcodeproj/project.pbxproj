@@ -18,6 +18,8 @@
 		288DF2422C771613000EC0E3 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2412C771613000EC0E3 /* HomeInteractor.swift */; };
 		288DF2442C771670000EC0E3 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2432C771670000EC0E3 /* HomeRouter.swift */; };
 		288DF2462C771A01000EC0E3 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288DF2452C771A01000EC0E3 /* HomeViewController.storyboard */; };
+		288DF2502C77254B000EC0E3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF24F2C77254B000EC0E3 /* APIManager.swift */; };
+		288DF2522C7726B6000EC0E3 /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2512C7726B6000EC0E3 /* HomeDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		288DF2412C771613000EC0E3 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		288DF2432C771670000EC0E3 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		288DF2452C771A01000EC0E3 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		288DF24F2C77254B000EC0E3 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		288DF2512C7726B6000EC0E3 /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			children = (
 				288DF22C2C7710DC000EC0E3 /* application */,
 				288DF22F2C77118C000EC0E3 /* app-modules */,
+				288DF24E2C7724CD000EC0E3 /* manager */,
 				288DF22D2C77114E000EC0E3 /* resources */,
 				288DF2252C770F4C000EC0E3 /* Info.plist */,
 			);
@@ -125,6 +130,7 @@
 		288DF2322C771257000EC0E3 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				288DF2512C7726B6000EC0E3 /* HomeDataModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -168,6 +174,14 @@
 				288DF21D2C770F4B000EC0E3 /* News.xcdatamodeld */,
 			);
 			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		288DF24E2C7724CD000EC0E3 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				288DF24F2C77254B000EC0E3 /* APIManager.swift */,
+			);
+			path = manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,8 +258,10 @@
 				288DF2152C770F4B000EC0E3 /* AppDelegate.swift in Sources */,
 				288DF21F2C770F4B000EC0E3 /* News.xcdatamodeld in Sources */,
 				288DF2172C770F4B000EC0E3 /* SceneDelegate.swift in Sources */,
+				288DF2502C77254B000EC0E3 /* APIManager.swift in Sources */,
 				288DF2402C7715B8000EC0E3 /* HomePresenter.swift in Sources */,
 				288DF23C2C7714CB000EC0E3 /* HomeViewController.swift in Sources */,
+				288DF2522C7726B6000EC0E3 /* HomeDataModel.swift in Sources */,
 				288DF2442C771670000EC0E3 /* HomeRouter.swift in Sources */,
 				288DF23E2C771507000EC0E3 /* HomeProtocol.swift in Sources */,
 				288DF2422C771613000EC0E3 /* HomeInteractor.swift in Sources */,
@@ -318,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -375,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
