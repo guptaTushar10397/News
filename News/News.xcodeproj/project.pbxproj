@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		288DF2152C770F4B000EC0E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2142C770F4B000EC0E3 /* AppDelegate.swift */; };
 		288DF2172C770F4B000EC0E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2162C770F4B000EC0E3 /* SceneDelegate.swift */; };
-		288DF2192C770F4B000EC0E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2182C770F4B000EC0E3 /* ViewController.swift */; };
-		288DF21C2C770F4B000EC0E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 288DF21B2C770F4B000EC0E3 /* Base */; };
 		288DF21F2C770F4B000EC0E3 /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 288DF21D2C770F4B000EC0E3 /* News.xcdatamodeld */; };
 		288DF2212C770F4C000EC0E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 288DF2202C770F4C000EC0E3 /* Assets.xcassets */; };
 		288DF2242C770F4C000EC0E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 288DF2232C770F4C000EC0E3 /* Base */; };
+		288DF23C2C7714CB000EC0E3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2392C7714CB000EC0E3 /* HomeViewController.swift */; };
+		288DF23E2C771507000EC0E3 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF23D2C771507000EC0E3 /* HomeProtocol.swift */; };
+		288DF2402C7715B8000EC0E3 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF23F2C7715B8000EC0E3 /* HomePresenter.swift */; };
+		288DF2422C771613000EC0E3 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2412C771613000EC0E3 /* HomeInteractor.swift */; };
+		288DF2442C771670000EC0E3 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DF2432C771670000EC0E3 /* HomeRouter.swift */; };
+		288DF2462C771A01000EC0E3 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288DF2452C771A01000EC0E3 /* HomeViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		288DF2112C770F4B000EC0E3 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		288DF2142C770F4B000EC0E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		288DF2162C770F4B000EC0E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		288DF2182C770F4B000EC0E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		288DF21B2C770F4B000EC0E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		288DF21E2C770F4B000EC0E3 /* News.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = News.xcdatamodel; sourceTree = "<group>"; };
 		288DF2202C770F4C000EC0E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		288DF2232C770F4C000EC0E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		288DF2252C770F4C000EC0E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		288DF2392C7714CB000EC0E3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		288DF23D2C771507000EC0E3 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
+		288DF23F2C7715B8000EC0E3 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		288DF2412C771613000EC0E3 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		288DF2432C771670000EC0E3 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		288DF2452C771A01000EC0E3 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				288DF2222C770F4C000EC0E3 /* LaunchScreen.storyboard */,
-				288DF21A2C770F4B000EC0E3 /* Main.storyboard */,
 				288DF2202C770F4C000EC0E3 /* Assets.xcassets */,
 				288DF2382C7713E6000EC0E3 /* CoreDataModels */,
 			);
@@ -90,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				288DF2302C771209000EC0E3 /* Home */,
-				288DF2182C770F4B000EC0E3 /* ViewController.swift */,
 			);
 			path = "app-modules";
 			sourceTree = "<group>";
@@ -111,6 +117,7 @@
 		288DF2312C771240000EC0E3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				288DF23D2C771507000EC0E3 /* HomeProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -125,6 +132,7 @@
 		288DF2332C771262000EC0E3 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				288DF2412C771613000EC0E3 /* HomeInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 		288DF2342C77126C000EC0E3 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				288DF2432C771670000EC0E3 /* HomeRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -139,6 +148,7 @@
 		288DF2352C771273000EC0E3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				288DF23F2C7715B8000EC0E3 /* HomePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -146,6 +156,8 @@
 		288DF2362C771279000EC0E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				288DF2392C7714CB000EC0E3 /* HomeViewController.swift */,
+				288DF2452C771A01000EC0E3 /* HomeViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,9 +228,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				288DF2462C771A01000EC0E3 /* HomeViewController.storyboard in Resources */,
 				288DF2212C770F4C000EC0E3 /* Assets.xcassets in Resources */,
 				288DF2242C770F4C000EC0E3 /* Base in Resources */,
-				288DF21C2C770F4B000EC0E3 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,24 +241,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				288DF2192C770F4B000EC0E3 /* ViewController.swift in Sources */,
 				288DF2152C770F4B000EC0E3 /* AppDelegate.swift in Sources */,
 				288DF21F2C770F4B000EC0E3 /* News.xcdatamodeld in Sources */,
 				288DF2172C770F4B000EC0E3 /* SceneDelegate.swift in Sources */,
+				288DF2402C7715B8000EC0E3 /* HomePresenter.swift in Sources */,
+				288DF23C2C7714CB000EC0E3 /* HomeViewController.swift in Sources */,
+				288DF2442C771670000EC0E3 /* HomeRouter.swift in Sources */,
+				288DF23E2C771507000EC0E3 /* HomeProtocol.swift in Sources */,
+				288DF2422C771613000EC0E3 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		288DF21A2C770F4B000EC0E3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				288DF21B2C770F4B000EC0E3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		288DF2222C770F4C000EC0E3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -384,12 +392,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4RM245ZBG3;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = News/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -418,7 +426,7 @@
 				INFOPLIST_FILE = News/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
