@@ -9,14 +9,24 @@ import Foundation
 
 class HomeInteractor {
     var presenter: InteractorToPresenterProtocol?
-    var coreDataService: CoreDataManagerProtocol?
+    var coreDataService = CoreDataManager.shared
 }
 
 extension HomeInteractor: PresenterToInteractorProtocol {
     
+    func addObserver() {
+        coreDataService.addObserver(self)
+    }
+    
+    func removeObserver() {
+        coreDataService.removeObserver(self)
+    }
+    
+    
     func fetchHomeData(fromURL url: URL) {
-        if let savedDocs = coreDataService?.fetchSavedDocs(),
-           !savedDocs.isEmpty {
+        let savedDocs = coreDataService.fetchSavedDocs()
+        
+        if !savedDocs.isEmpty {
             presenter?.didSuccessfullyReceiveHomeModelData(savedDocs)
         } else {
             Task {
@@ -25,7 +35,7 @@ extension HomeInteractor: PresenterToInteractorProtocol {
                     
                     guard let docs = homeDataModel.response?.docs,
                           !docs.isEmpty else { return }
-                    coreDataService?.saveDocs(docsArray: docs)
+                    coreDataService.saveDocs(docsArray: docs)
                     presenter?.didSuccessfullyReceiveHomeModelData(docs)
                 } catch {
                     presenter?.didFailToReceiveHomeModelData(error)
@@ -35,7 +45,7 @@ extension HomeInteractor: PresenterToInteractorProtocol {
     }
     
     func delete(_ doc: Docs) {
-        coreDataService?.delete(doc)
+        coreDataService.delete(doc)
     }
 }
 

@@ -6,28 +6,41 @@
 //
 
 import CoreData
+import UIKit
 
-protocol CoreDataManagerProtocol {
-    func saveDocs(docsArray: [Docs])
-    func fetchSavedDocs() -> [Docs]
-    func delete(_ doc: Docs)
+protocol CoreDataManagerProtocol: AnyObject {
+    func addObserver(_ observer: CoreDataManagerToInteractorProtocol)
+    func removeObserver(_ observer: CoreDataManagerToInteractorProtocol)
 }
 
 protocol CoreDataManagerToInteractorProtocol: AnyObject {
     func coreDataManagerDidSuccessfullyDeletedDoc(_ doc: Docs)
 }
 
-class CoreDataManager {
-    let persistentContainer: NSPersistentContainer
-    weak var interactor: CoreDataManagerToInteractorProtocol?
+final class CoreDataManager {
+    static let shared = CoreDataManager()
     
-    init(container: NSPersistentContainer, interactor: CoreDataManagerToInteractorProtocol) {
-        self.persistentContainer = container
-        self.interactor = interactor
+    let persistentContainer: NSPersistentContainer
+    var interactors: [CoreDataManagerToInteractorProtocol] = []
+    
+    private init () {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.persistentContainer = appDelegate.persistentContainer
     }
 }
 
 extension CoreDataManager: CoreDataManagerProtocol {
+    
+    func addObserver(_ observer: CoreDataManagerToInteractorProtocol) {
+        if !interactors.contains(where: {$0 === observer} ) {
+            interactors.append(observer)
+        }
+    }
+    
+    func removeObserver(_ observer: CoreDataManagerToInteractorProtocol) {
+        guard let index = interactors.firstIndex(where: {$0 === observer}) else { return }
+        interactors.remove(at: index)
+    }
     
     func saveDocs(docsArray: [Docs]) {
         for docs in docsArray {
@@ -84,7 +97,11 @@ extension CoreDataManager: CoreDataManagerProtocol {
                 context.delete(cdDocToDelete)
                 do {
                     try persistentContainer.viewContext.save()
-                    interactor?.coreDataManagerDidSuccessfullyDeletedDoc(doc)
+                    
+                    interactors.forEach { object in
+                        object.coreDataManagerDidSuccessfullyDeletedDoc(doc)
+                    }
+                    
                 } catch {
                     print("Failed to save data: \(error)")
                 }

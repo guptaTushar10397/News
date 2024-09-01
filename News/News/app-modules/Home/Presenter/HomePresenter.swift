@@ -13,6 +13,10 @@ class HomePresenter {
     var router: PresenterToRouterProtocol?
     
     private var docs: [Docs] = []
+    
+    deinit {
+        interactor?.removeObserver()
+    }
 }
 
 extension HomePresenter: ViewToPresenterProtocol {
@@ -22,6 +26,7 @@ extension HomePresenter: ViewToPresenterProtocol {
     }
     
     func viewDidLoad() {
+        interactor?.addObserver()
         view?.showLoadingIndicatorView(true)
         fetchHomeData()
     }

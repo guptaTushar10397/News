@@ -25,6 +25,8 @@ protocol PresenterToRouterProtocol: AnyObject {
 }
 
 protocol PresenterToInteractorProtocol: AnyObject {
+    func addObserver()
+    func removeObserver()
     func fetchHomeData(fromURL url: URL)
     func delete(_ doc: Docs)
 }
