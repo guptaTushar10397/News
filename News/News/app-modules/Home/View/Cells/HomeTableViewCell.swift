@@ -59,5 +59,11 @@ extension HomeTableViewCell {
            let url = URL(string: baseURL + "/\(urlString)") {
             iconImageView.setImage(withURL: url)
         }
+        
+        if modelData.isFavourite {
+            self.backgroundColor = .systemBlue
+        } else {
+            self.backgroundColor = .clear
+        }
     }
 }

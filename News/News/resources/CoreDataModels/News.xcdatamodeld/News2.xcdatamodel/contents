@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23G93" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDDocs" representedClassName="CDDocs" syncable="YES" codeGenerationType="class">
+        <attribute name="abstract" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isFavourite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="pubDate" optional="YES" attributeType="String"/>
+        <relationship name="multimedia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDMultimedia" inverseName="docs" inverseEntity="CDMultimedia"/>
+    </entity>
+    <entity name="CDMultimedia" representedClassName="CDMultimedia" syncable="YES" codeGenerationType="class">
+        <attribute name="iconUrl" optional="YES" attributeType="String"/>
+        <relationship name="docs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDDocs" inverseName="multimedia" inverseEntity="CDDocs"/>
+    </entity>
+</model>

@@ -12,6 +12,7 @@ protocol ViewToPresenterProtocol: AnyObject {
     func viewDidLoad()
     func dataForRowAt(_ indexPath: IndexPath) -> Docs?
     func deleteForRowAt(_ indexPath: IndexPath)
+    func markeFavouriteForRowAt(_ indexPath: IndexPath)
 }
 
 protocol PresenterToViewProtocol: AnyObject {
@@ -29,11 +30,13 @@ protocol PresenterToInteractorProtocol: AnyObject {
     func removeObserver()
     func fetchHomeData(fromURL url: URL)
     func delete(_ doc: Docs)
+    func updateDoc(_ doc: Docs)
 }
 
 protocol InteractorToPresenterProtocol: AnyObject {
     func didSuccessfullyReceiveHomeModelData(_ docs: [Docs])
     func didFailToReceiveHomeModelData(_ error: Error)
     func didSuccessfullyDeletedDoc(_ doc: Docs)
+    func didSuccessfullyUpdateDoc(_ doc: Docs)
 }
 

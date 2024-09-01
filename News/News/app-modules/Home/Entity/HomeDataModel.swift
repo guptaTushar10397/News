@@ -16,10 +16,11 @@ struct Response: Codable {
 }
 
 struct Docs: Codable, Equatable {
-    
+    var id: UUID = UUID()
     var abstract: String?
     var multimedia: [Multimedia]?
     var pubDate: String?
+    var isFavourite: Bool = false
     
     private enum CodingKeys: String, CodingKey {
         case abstract
@@ -27,10 +28,12 @@ struct Docs: Codable, Equatable {
         case pubDate = "pub_date"
     }
     
-    init(abstract: String?, multimedia: [Multimedia]?, pubDate: String?) {
+    init(id: UUID?, abstract: String?, multimedia: [Multimedia]?, pubDate: String?, isFavourite: Bool?) {
+        self.id = id ?? UUID()
         self.abstract = abstract
         self.multimedia = multimedia
         self.pubDate = pubDate
+        self.isFavourite = isFavourite ?? false
     }
     
     init(from decoder: any Decoder) throws {
@@ -41,8 +44,7 @@ struct Docs: Codable, Equatable {
     }
     
     static func == (lhs: Docs, rhs: Docs) -> Bool {
-        lhs.abstract == rhs.abstract &&
-        lhs.pubDate == rhs.pubDate
+        lhs.id == rhs.id
     }
 }
 

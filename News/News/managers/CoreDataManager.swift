@@ -15,6 +15,7 @@ protocol CoreDataManagerProtocol: AnyObject {
 
 protocol CoreDataManagerToInteractorProtocol: AnyObject {
     func coreDataManagerDidSuccessfullyDeletedDoc(_ doc: Docs)
+    func coreDataManagerDidSuccessfullyUpdateDoc(_ doc: Docs)
 }
 
 final class CoreDataManager {
@@ -45,6 +46,8 @@ extension CoreDataManager: CoreDataManagerProtocol {
     func saveDocs(docsArray: [Docs]) {
         for docs in docsArray {
             let cdDocs = CDDocs(context: persistentContainer.viewContext)
+            cdDocs.id = docs.id
+            cdDocs.isFavourite = docs.isFavourite
             cdDocs.abstract = docs.abstract
             cdDocs.pubDate = docs.pubDate
 
@@ -78,9 +81,11 @@ extension CoreDataManager: CoreDataManagerProtocol {
             
             // Map headline
             return Docs(
+                id: cdDoc.id,
                 abstract: cdDoc.abstract,
                 multimedia: multimedia,
-                pubDate: cdDoc.pubDate
+                pubDate: cdDoc.pubDate,
+                isFavourite: cdDoc.isFavourite
             )
         }
     }
@@ -89,7 +94,7 @@ extension CoreDataManager: CoreDataManagerProtocol {
         let context = persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<CDDocs> = CDDocs.fetchRequest()
         
-        fetchRequest.predicate = NSPredicate(format: "abstract == %@ AND pubDate == %@", argumentArray: [doc.abstract, doc.pubDate])
+        fetchRequest.predicate = NSPredicate(format: "id == %@", argumentArray: [doc.id])
         
         do {
             let results = try context.fetch(fetchRequest)
@@ -100,6 +105,36 @@ extension CoreDataManager: CoreDataManagerProtocol {
                     
                     interactors.forEach { object in
                         object.coreDataManagerDidSuccessfullyDeletedDoc(doc)
+                    }
+                    
+                } catch {
+                    print("Failed to save data: \(error)")
+                }
+                
+            } else {
+                print(" Doc is not exist.")
+            }
+            
+        } catch {
+            
+        }
+    }
+    
+    func updateDoc(_ doc: Docs) {
+        let context = persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<CDDocs> = CDDocs.fetchRequest()
+        
+        fetchRequest.predicate = NSPredicate(format: "id == %@", argumentArray: [doc.id])
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            if let cdDocToUpdate = results.first {
+                cdDocToUpdate.isFavourite = doc.isFavourite
+                do {
+                    try persistentContainer.viewContext.save()
+                    
+                    interactors.forEach { object in
+                        object.coreDataManagerDidSuccessfullyUpdateDoc(doc)
                     }
                     
                 } catch {

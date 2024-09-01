@@ -47,11 +47,19 @@ extension HomeInteractor: PresenterToInteractorProtocol {
     func delete(_ doc: Docs) {
         coreDataService.delete(doc)
     }
+    
+    func updateDoc(_ doc: Docs) {
+        coreDataService.updateDoc(doc)
+    }
 }
 
 extension HomeInteractor: CoreDataManagerToInteractorProtocol {
     
     func coreDataManagerDidSuccessfullyDeletedDoc(_ doc: Docs) {
         presenter?.didSuccessfullyDeletedDoc(doc)
+    }
+    
+    func coreDataManagerDidSuccessfullyUpdateDoc(_ doc: Docs) {
+        presenter?.didSuccessfullyUpdateDoc(doc)
     }
 }

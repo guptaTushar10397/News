@@ -54,6 +54,7 @@
 		28BD4ED62C7739FB00A4DF20 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		28BD4ED82C773CCA00A4DF20 /* DateFormatterProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterProvider.swift; sourceTree = "<group>"; };
 		28BD4EDA2C773D2A00A4DF20 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		28F044A52C84BD7100160D49 /* News2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = News2.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -550,9 +551,10 @@
 		288DF21D2C770F4B000EC0E3 /* News.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				28F044A52C84BD7100160D49 /* News2.xcdatamodel */,
 				288DF21E2C770F4B000EC0E3 /* News.xcdatamodel */,
 			);
-			currentVersion = 288DF21E2C770F4B000EC0E3 /* News.xcdatamodel */;
+			currentVersion = 28F044A52C84BD7100160D49 /* News2.xcdatamodel */;
 			path = News.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

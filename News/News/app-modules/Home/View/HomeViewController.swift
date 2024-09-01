@@ -104,4 +104,15 @@ extension HomeViewController: UITableViewDelegate {
         
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let favouriteAction = UIContextualAction(style: .normal, title: "Favourite") { [weak self] _, _, _ in
+            guard let self = self else { return }
+            presentor.markeFavouriteForRowAt(indexPath)
+        }
+        
+        favouriteAction.backgroundColor = .systemBlue
+        
+        return UISwipeActionsConfiguration(actions: [favouriteAction])
+    }
 }

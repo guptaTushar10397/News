@@ -39,6 +39,16 @@ extension HomePresenter: ViewToPresenterProtocol {
         let doc = docs[indexPath.row]
         interactor?.delete(doc)
     }
+    
+    func markeFavouriteForRowAt(_ indexPath: IndexPath) {
+        var doc = docs[indexPath.row]
+        if doc.isFavourite {
+            doc.isFavourite = false
+        } else {
+            doc.isFavourite = true
+        }
+        interactor?.updateDoc(doc)
+    }
 }
 
 extension HomePresenter: InteractorToPresenterProtocol {
@@ -69,6 +79,12 @@ extension HomePresenter: InteractorToPresenterProtocol {
         docs.remove(at: index)
         let indexPath = IndexPath(row: index, section: 0)
         view?.deleteForRowAt(indexPath)
+    }
+    
+    func didSuccessfullyUpdateDoc(_ doc: Docs) {
+        guard let index = docs.firstIndex(where: {$0 == doc}) else { return }
+        docs[index] = doc
+        view?.reloadTabelView()
     }
 }
 
