@@ -15,7 +15,8 @@ struct Response: Codable {
     var docs: [Docs]?
 }
 
-struct Docs: Codable {
+struct Docs: Codable, Equatable {
+    
     var abstract: String?
     var multimedia: [Multimedia]?
     var pubDate: String?
@@ -39,6 +40,10 @@ struct Docs: Codable {
         self.pubDate = try container.decodeIfPresent(String.self, forKey: .pubDate)
     }
     
+    static func == (lhs: Docs, rhs: Docs) -> Bool {
+        lhs.abstract == rhs.abstract &&
+        lhs.pubDate == rhs.pubDate
+    }
 }
 
 struct Multimedia: Codable {

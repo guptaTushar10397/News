@@ -29,6 +29,11 @@ extension HomePresenter: ViewToPresenterProtocol {
     func dataForRowAt(_ indexPath: IndexPath) -> Docs? {
         docs[indexPath.row]
     }
+    
+    func deleteForRowAt(_ indexPath: IndexPath) {
+        let doc = docs[indexPath.row]
+        interactor?.delete(doc)
+    }
 }
 
 extension HomePresenter: InteractorToPresenterProtocol {
@@ -52,6 +57,13 @@ extension HomePresenter: InteractorToPresenterProtocol {
     func didFailToReceiveHomeModelData(_ error: any Error) {
         view?.showLoadingIndicatorView(false)
         fatalError("Failed to fetch data, Error: \(error.localizedDescription)")
+    }
+    
+    func didSuccessfullyDeletedDoc(_ doc: Docs) {
+        guard let index = docs.firstIndex(where: {$0 == doc}) else { return }
+        docs.remove(at: index)
+        let indexPath = IndexPath(row: index, section: 0)
+        view?.deleteForRowAt(indexPath)
     }
 }
 

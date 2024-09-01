@@ -16,7 +16,8 @@ class HomeRouter {
         let router = HomeRouter()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let persistentContainer = appDelegate.persistentContainer
-        let coreDataService = CoreDataManager(container: persistentContainer)
+        let coreDataService = CoreDataManager(container: persistentContainer, 
+                                              interactor: interactor)
         
         view.presentor = presenter
         presenter.view = view

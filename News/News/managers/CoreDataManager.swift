@@ -10,13 +10,20 @@ import CoreData
 protocol CoreDataManagerProtocol {
     func saveDocs(docsArray: [Docs])
     func fetchSavedDocs() -> [Docs]
+    func delete(_ doc: Docs)
+}
+
+protocol CoreDataManagerToInteractorProtocol: AnyObject {
+    func coreDataManagerDidSuccessfullyDeletedDoc(_ doc: Docs)
 }
 
 class CoreDataManager {
     let persistentContainer: NSPersistentContainer
+    weak var interactor: CoreDataManagerToInteractorProtocol?
     
-    init(container: NSPersistentContainer) {
+    init(container: NSPersistentContainer, interactor: CoreDataManagerToInteractorProtocol) {
         self.persistentContainer = container
+        self.interactor = interactor
     }
 }
 
@@ -62,6 +69,32 @@ extension CoreDataManager: CoreDataManagerProtocol {
                 multimedia: multimedia,
                 pubDate: cdDoc.pubDate
             )
+        }
+    }
+    
+    func delete(_ doc: Docs) {
+        let context = persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<CDDocs> = CDDocs.fetchRequest()
+        
+        fetchRequest.predicate = NSPredicate(format: "abstract == %@ AND pubDate == %@", argumentArray: [doc.abstract, doc.pubDate])
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            if let cdDocToDelete = results.first {
+                context.delete(cdDocToDelete)
+                do {
+                    try persistentContainer.viewContext.save()
+                    interactor?.coreDataManagerDidSuccessfullyDeletedDoc(doc)
+                } catch {
+                    print("Failed to save data: \(error)")
+                }
+                
+            } else {
+                print(" Doc is not exist.")
+            }
+            
+        } catch {
+            
         }
     }
 }

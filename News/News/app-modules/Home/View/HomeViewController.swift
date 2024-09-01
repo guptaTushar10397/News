@@ -45,6 +45,15 @@ extension HomeViewController: PresenterToViewProtocol {
             self.mainTableView.reloadData()
         }
     }
+    
+    func deleteForRowAt(_ indexPath: IndexPath) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.mainTableView.beginUpdates()
+            self.mainTableView.deleteRows(at: [indexPath], with: .automatic)
+            self.mainTableView.endUpdates()
+        }
+    }
 }
 
 private extension HomeViewController {
@@ -60,6 +69,7 @@ private extension HomeViewController {
     func setupTableView() {
         mainTableView.register(UINib(nibName: "HomeTableViewCell", bundle: nibBundle), forCellReuseIdentifier: "HomeTableViewCell")
         mainTableView.dataSource = self
+        mainTableView.delegate = self
     }
 }
 
@@ -81,5 +91,17 @@ extension HomeViewController: UITableViewDataSource {
         cell.configureDataWithModel(doc)
         
         return cell
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] _, _, _ in
+            guard let self = self else { return }
+            presentor.deleteForRowAt(indexPath)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }

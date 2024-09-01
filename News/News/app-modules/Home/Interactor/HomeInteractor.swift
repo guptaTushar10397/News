@@ -33,4 +33,15 @@ extension HomeInteractor: PresenterToInteractorProtocol {
             }
         }
     }
+    
+    func delete(_ doc: Docs) {
+        coreDataService?.delete(doc)
+    }
+}
+
+extension HomeInteractor: CoreDataManagerToInteractorProtocol {
+    
+    func coreDataManagerDidSuccessfullyDeletedDoc(_ doc: Docs) {
+        presenter?.didSuccessfullyDeletedDoc(doc)
+    }
 }
